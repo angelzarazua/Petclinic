@@ -1,0 +1,27 @@
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link rel="stylesheet" th:href="@{/resources/css/petclinic.css}"/>
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="panel panel-default" style="width: 300px; margin: 5% auto; ">
+                <div class="panel-heading">Iniciar Sesión</div>
+                <div class="panel-body">
+                    <img class="img-responsive" src="../static/resources/images/pets.png" th:src="@{/resources/images/pets.png}" 
+                         style=" width:50%; margin: 2px auto 10px auto; border-radius: 100%;"/>
+                    <span style="display: block; text-align: center; color:red; font-weight: bold; margin: 10px 0px;" th:if="${param.error}">
+                        Username o password incorrecto!!
+                    </span>
+                    <form name='login' action="/login" method='POST'>
+                        <input type='text' name='username' class="form-control" placeholder="Username"  style="margin-bottom: 5px;" required>
+                        <input type='password' name='password' class="form-control" placeholder="Password"  required/><br>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                        <input class="btn btn-lg btn-success btn-block" name="submit" type="submit" value="Entrar"/><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

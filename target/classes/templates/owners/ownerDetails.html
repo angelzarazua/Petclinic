@@ -1,0 +1,138 @@
+
+
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+
+  <body>
+  
+  
+    <h2 th:text="#{info}">Owner Information</h2>
+    <div style="display: none">        
+        <form th:object="${owner}" class="form-horizontal" id="add-owner-form" method="post">
+        <input
+            th:replace="~{fragments/inputField :: input (#{address}, 'address', 'text')}" />
+        <input
+        th:replace="~{fragments/inputField :: input (#{city}, 'city', 'text')}" />
+        </form>
+    </div>
+  
+  
+    <table class="table table-striped" th:object="${owner}">
+      <tr>
+        <th th:text="#{name}">Name</th>
+        <td><b th:text="*{firstName + ' ' + lastName}"></b></td>
+      </tr>
+      <tr>
+        <th th:text="#{address}">Address</th>
+        <td th:text="*{address}" id="direc"/></td>
+      </tr>
+      <tr>
+        <th th:text="#{city}">City</th>
+        <td th:text="*{city}" id="city"/></td>
+      </tr>
+      <tr>
+        <th th:text="#{telephone}">Telephone</th>
+        <td th:text="*{telephone}" /></td>
+      </tr>
+    </table>  
+    <div id="map" style="height: 60%; width: 60%; margin-bottom: 40px;">aasdsadsdads</div>
+    
+    <a th:href="@{{id}/edit(id=${owner.id})}" class="btn btn-default" th:text="#{editOwner}">Edit
+      Owner</a>
+    <a th:href="@{{id}/pets/new(id=${owner.id})}" class="btn btn-default" th:text="#{newPet}">Add
+      New Pet</a>
+  
+    <br />
+    <br />
+    <br />
+    <h2 th:text="#{pav}">Pets and Visits</h2>
+  
+    <table class="table table-striped">
+  
+      <tr th:each="pet : ${owner.pets}">
+        <td valign="top">
+          <dl class="dl-horizontal">
+            <dt th:text="#{name}">Name</dt>
+            <dd th:text="${pet.name}" /></dd>
+            <dt th:text="#{birthDate}">Birth Date</dt>
+            <dd th:text="${#temporals.format(pet.birthDate, 'yyyy-MM-dd')}" /></dd>
+            <dt th:text="#{type}">Type</dt>
+            <dd th:text="${pet.type}" /></dd>
+          </dl>
+        </td>
+        <td valign="top">
+          <table class="table-condensed">
+            <thead>
+              <tr>
+                <th th:text="#{visitDate}">Visit Date</th>
+                <th th:text="#{description}">Description</th>
+                <th><a th:href="@{{ownerId}/pets/{petId}/album(ownerId=${owner.id},petId=${pet.id})}">Ver album</a></th>
+              </tr>
+            </thead>
+            <tr th:each="visit : ${pet.visits}">
+              <td th:text="${#temporals.format(visit.date, 'yyyy-MM-dd')}"></td>
+              <td th:text="${visit?.description}"></td>
+            </tr>
+            <tr>
+              <td><a
+                th:href="@{{ownerId}/pets/{petId}/edit(ownerId=${owner.id},petId=${pet.id})}" th:text="#{editPet}">Edit
+                  Pet</a></td>
+              <td><a
+                th:href="@{{ownerId}/pets/{petId}/visits/new(ownerId=${owner.id},petId=${pet.id})}" th:text="#{addVisit}">Add
+                  Visit</a></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+  
+    </table>
+  
+        
+    <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+    
+    <script>
+      function initMap() {
+        var bandera = false;
+        var direccion = document.getElementById('address').value;
+        var ciudad = document.getElementById('city').value;
+        if (address==null) {
+            bandera=true;
+        }
+        var map = new google.maps.Map(document.getElementById('map'), {          
+            zoom: 13,
+            center: {lat: 16.7581445, lng: -93.1082193}
+        });        
+        
+        var geocoder = new google.maps.Geocoder();
+        geocodeAddress(geocoder, map, bandera, direccion, ciudad);
+      }
+
+      function geocodeAddress(geocoder, resultsMap, bandera, direccion, ciudad) {
+        if(bandera==false){
+            var direccion = document.getElementById('address').value;
+            var ciudad = document.getElementById('city').value;
+        }
+        
+        
+        var address = direccion+", " + ciudad;
+        console.log(address);
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location,
+              zoom: 10
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+    </script> 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZyd7YbMOpiz3QUJJ0jjw3KUquyhUaRME&callback=initMap"> </script>
+  
+    
+  </body>
+
+</html>

@@ -1,0 +1,55 @@
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'owners')}">
+
+<body th:object="${pet}">
+
+    <h2>Álbum de <span th:text="${pet.name}"></span></h2>
+  
+  
+  <form th:object="${album}" method="post" enctype="multipart/form-data">
+    <div class="form-group has-feedback">
+      <input type="hidden" name="petId" th:value="${pet.id}" />
+    </div>
+    <div class="form-group has-feedback">
+        <label class="btn btn-default btn-file">
+            Buscar imagen <input id="custom-button" name="file" type="file" style="display: none;">
+        </label>
+        <span style="margin-left: 5px;" id="custom-text">Achivo no selecionado</span>
+    </div>
+    <div class="form-group">
+      <div>
+          <input id="photoName" type="hidden" name="photo" value=""/>       
+        <button class="btn btn-default" type="submit">Agregar foto</button>
+      </div>
+    </div>
+  </form>
+    
+    <h2>Fotos</h2>
+    <div class="row">
+        <div style="margin-top: 10px" class="col-md-4" th:each="photos : ${pet.album}">
+              <div class="card box-shadow">
+                <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 200px; width: 100%; display: block;" th:src="@{/resources/imagesPets/__${photos.photo}__}" data-holder-rendered="true">
+                <!--div style="margin: 3px" class="card-footer text-center">
+                  <small class="text-muted">Borrar</small>
+                </div-->
+              </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var customBtn=document.getElementById("custom-button");
+        var customTxt=document.getElementById("custom-text");
+        
+        customBtn.addEventListener("change", function(){
+            if(customBtn.value){
+                var name = customBtn.files[0].name;
+                document.getElementById("photoName").value = name;
+                customTxt.innerHTML = name;
+
+            }else{
+                customTxt.innerHTML = "Archivo no selecionado";
+            }
+        });
+    </script>
+</body>
+
+</html>

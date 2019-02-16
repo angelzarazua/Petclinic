@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'reportListView')}">
+
+    <body>
+        
+        <h2>Reporte</h2>
+        
+        <table id="users" class="table table-striped">
+            <thead>
+            <tr>
+                <th th:text="Nombre">Nombre</th>
+                <th th:text="Usuario">Usuario</th>
+                <th th:text="#{CodigoPostal}">Codigo Postal</th>
+                <th th:text="'Activo/Inactivo'">Activo/Inactivo</th>
+                <th th:text="Municipio">Activo/Inactivo</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr th:each="users : ${users.usersList}">
+                  <td th:text="${users.nombre}"></td>
+                  <td th:text="${users.user_name}"></td>
+                  <td th:text="${users.cp}"></td>
+                  <td>
+                      <span th:if="${users.activo == '0'}">Inactivo</span>
+                      <span th:if="${users.activo == '1'}">Activo</span>                      
+                  </td>
+                  <td th:text="${users.municipio}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <div style="text-align: center">
+
+          <br>
+          <br>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'Reportes de Logins')}">
+
+<body>
+
+  <h2>Reportes de Inicio de Sesión</h2>
+
+  <table id="vets" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Fecha de intento</th>
+        <th>Hora</th>
+        <th>Username</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="reporteLogin : ${reporteslogin.getReportesLoginList()}">
+        <td th:text="${reporteLogin.date}"></td>
+        <td th:text="${reporteLogin.hora}"></td>
+        <td th:text="${reporteLogin.username}"> </td>
+        <td th:text="${reporteLogin.descripcion}"> </td>
+      </tr>
+    </tbody>
+  </table>
+  
+</body>
+</html>
