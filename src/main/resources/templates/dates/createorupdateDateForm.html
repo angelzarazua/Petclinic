@@ -1,0 +1,35 @@
+
+
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'dates')}">
+
+<body>
+
+  <h2 th:text="#{date}">Dates</h2>
+  
+  <form th:object="${date}" class="form-horizontal" id="add-vet-form" method="post">
+      <div class="form-group has-feedback">
+        <input
+            th:replace="~{fragments/inputField :: input (#{fecha}, 'fecha', 'dateN')}" />
+        <input 
+            th:replace="~{fragments/inputField :: input (#{hour}, 'hora', 'hora')}" value="hola"/>
+        <input
+            th:replace="~{fragments/selectField :: select ('Mascota', 'mascota', ${pets})}" />
+        
+        <input
+            th:replace="~{fragments/selectField :: select ('specialties', 'specialties', ${specialties})}" />
+        <input
+            th:replace="~{fragments/selectField :: select ('status', 'confirmacion', ${status})}" /> 
+      </div>
+      <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button
+          th:with="text=${date['new']} ? 'Add Date' : 'Update Date'"
+          class="btn btn-default" type="submit" >Agregar y guardar</button>
+      </div>
+    </div>
+      
+      
+      
+  </form>
+</body>
+</html>

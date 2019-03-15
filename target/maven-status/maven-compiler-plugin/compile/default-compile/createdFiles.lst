@@ -1,3 +1,4 @@
+org\springframework\samples\petclinic\date\Date.class
 org\springframework\samples\petclinic\system\CrashController.class
 org\springframework\samples\petclinic\system\LoginController.class
 org\springframework\samples\petclinic\owner\OwnerRepository.class
@@ -26,6 +27,8 @@ org\springframework\samples\petclinic\owner\AlbumController.class
 org\springframework\samples\petclinic\vet\SpecialtyFormatter.class
 org\springframework\samples\petclinic\owner\PetTypeFormatter.class
 org\springframework\samples\petclinic\visit\Visit.class
+org\springframework\samples\petclinic\date\DateRepository.class
+org\springframework\samples\petclinic\date\DateController.class
 org\springframework\samples\petclinic\vet\Vets.class
 org\springframework\samples\petclinic\medicament\MedicamentController.class
 org\springframework\samples\petclinic\medicament\MedicamentRepository.class
@@ -33,6 +36,7 @@ org\springframework\samples\petclinic\owner\VisitController.class
 org\springframework\samples\petclinic\users\UsersList.class
 org\springframework\samples\petclinic\owner\Owner.class
 org\springframework\samples\petclinic\visit\VisitRepository.class
+org\springframework\samples\petclinic\date\Dates.class
 org\springframework\samples\petclinic\vet\VetRepository.class
 org\springframework\samples\petclinic\model\BaseEntity.class
 org\springframework\samples\petclinic\users\GetWs.class

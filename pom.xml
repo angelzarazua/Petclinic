@@ -132,6 +132,12 @@
       <version>2.8.0</version>
       <type>jar</type>
     </dependency>
+    <dependency>
+      <groupId>org.apache.ant</groupId>
+      <artifactId>ant</artifactId>
+      <version>1.8.2</version>
+      <type>jar</type>
+    </dependency>
   </dependencies>
 
   <build>

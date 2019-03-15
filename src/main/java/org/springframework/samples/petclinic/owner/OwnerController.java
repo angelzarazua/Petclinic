@@ -149,6 +149,11 @@ class OwnerController {
             return "owners/ownerReporte";
         
     }
+    
+    @GetMapping("/r")
+    public String showVis(){
+        return "dates/createorupdateDateForm";
+    }
 
    
 }

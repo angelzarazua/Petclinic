@@ -4,17 +4,28 @@
 
   <body>
 
-    <h2 th:text="#{welcome}">Welcome</h2>
+<!--    <h2 th:text="#{welcome}">Welcome</h2>
     <div class="row">
         <div class="col-md-12">
           <img class="img-responsive" src="../static/resources/images/pets.png" th:src="@{/resources/images/pets.png}"/>
         </div>
+    </div>-->
+    
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h1 th:text="#{welcome}" style="font-size: 50px;">Welcome</h1>
+             <img class="img-responsive" src="../static/resources/images/pets.png" th:src="@{/resources/images/pets.png}"/>
+            
+        </div>
+        <div class="col-md-4"></div>
     </div>
    
     <div style="text-align: center">
         <a class="btn btn-default" th:href="@{/reporte}">Reporte veterinario</a>
-           <a class="btn btn-default" th:href="@{/reportaje}">Reportaje mascotas</a>
-           <a class="btn btn-default" th:href="@{/reportajeOwners}">Reportaje Propietarios</a>
+           <a class="btn btn-default" th:href="@{/reportaje}">Reporte mascotas</a>
+           <a class="btn btn-default" th:href="@{/reportajeOwners}">Reporte Propietarios</a>
+           <a class="btn btn-default" th:href="@{/dateList}">Citas</a>
     </div>
 
   </body>

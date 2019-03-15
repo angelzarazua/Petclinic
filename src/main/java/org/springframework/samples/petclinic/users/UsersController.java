@@ -167,4 +167,9 @@ for (int i = 0; i < entero.length(); i++) {
         model.put("users", results);
         return "redirect:/userListView";
     }
+    
+    @GetMapping("/doc")
+    public String viewManual(){
+        return "/users/manualUsuario";
+    }
 }

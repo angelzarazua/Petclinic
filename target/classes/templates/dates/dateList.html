@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html xmlns:th="http://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'dates')}">
+    
+<body>
+    <div>TODO write content</div>
+    
+    <table id="dates" class="table table-striped">
+      <thead>
+        <tr>
+            <th th:text="#{fecha}">Date</th>
+            <th th:text="#{hour}">Hour</th>
+            <th th:text="#{pet}">Pet</th>
+            <th th:text="#{confirmation}">Confirmation</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr th:each="date : ${dates.dateList}">
+              <td th:text="${date.fecha}"></td>
+              <td th:text="${date.hora}"></td>
+              <td th:text="${date.mascota}"></td>
+              <td th:text="${date.confirmacion}"></td>
+          </tr>
+      </tbody>
+        
+    </table>
+    
+    <div style="text-align: center">
+      
+      <br>
+      <br>
+      <a class="btn btn-default" th:href="@{/dates/new}" >Agregar Citas</a>
+  </div>
+        
+        
+        
+        
+        
+        
+        
+        
+</body>
+</html>

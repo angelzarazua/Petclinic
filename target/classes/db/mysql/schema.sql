@@ -99,3 +99,20 @@ CREATE TABLE IF NOT EXISTS album (
   photo VARCHAR(100),
   FOREIGN KEY (pet_id) REFERENCES pets(id)
 ) engine=InnoDB;
+
+CREATE TABLE IF NOT EXISTS dates (
+  id INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  fecha DATE,
+  hora DATETIME,
+  mascota VARCHAR(80),
+  confirmacion INT(4) UNSIGNED
+
+)engine=InnoDB;
+
+CREATE TABLE IF NOT EXISTS date_specialties (
+  date_id INT(4) UNSIGNED NOT NULL,
+  specialty_id INT(4) UNSIGNED NOT NULL,
+  FOREIGN KEY (date_id) REFERENCES dates(id),
+  FOREIGN KEY (specialty_id) REFERENCES dates(id),
+  UNIQUE (date_id,specialty_id)
+) engine=InnoDB;

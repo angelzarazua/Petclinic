@@ -1,13 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: org.springframework.samples.petclinic.owner.OwnerControllerTests
 -------------------------------------------------------------------------------
-Tests run: 12, Failures: 0, Errors: 12, Skipped: 0, Time elapsed: 18.046 s <<< FAILURE! - in org.springframework.samples.petclinic.owner.OwnerControllerTests
-testProcessUpdateOwnerFormHasErrors(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0.001 s  <<< ERROR!
+Tests run: 12, Failures: 0, Errors: 12, Skipped: 0, Time elapsed: 10.861 s <<< FAILURE! - in org.springframework.samples.petclinic.owner.OwnerControllerTests
+testProcessUpdateOwnerFormHasErrors(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0.002 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 
-testProcessCreationFormSuccess(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0 s  <<< ERROR!
+testProcessCreationFormSuccess(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0.006 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
@@ -22,42 +22,42 @@ java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 
-testInitUpdateOwnerForm(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0 s  <<< ERROR!
+testInitUpdateOwnerForm(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0.001 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 
-testInitCreationForm(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0 s  <<< ERROR!
+testInitCreationForm(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0.002 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 
-testProcessFindFormByLastName(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0 s  <<< ERROR!
+testProcessFindFormByLastName(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0.003 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 
-testProcessFindFormNoOwnersFound(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0 s  <<< ERROR!
+testProcessFindFormNoOwnersFound(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0.002 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 
-testProcessFindFormSuccess(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0.001 s  <<< ERROR!
+testProcessFindFormSuccess(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0.006 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 
-testProcessUpdateOwnerFormSuccess(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0.001 s  <<< ERROR!
+testProcessUpdateOwnerFormSuccess(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 
-testProcessFindForm(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0.001 s  <<< ERROR!
+testProcessFindForm(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0.002 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 
-testProcessCreationFormHasErrors(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0.001 s  <<< ERROR!
+testProcessCreationFormHasErrors(org.springframework.samples.petclinic.owner.OwnerControllerTests)  Time elapsed: 0 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
 Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityConfig': Unsatisfied dependency expressed through field 'dataSource'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
 Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'javax.sql.DataSource' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
